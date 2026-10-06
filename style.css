@@ -1,5 +1,7 @@
-/* Reset & Base */
-* {
+/* ============================================
+   Reset & Base
+   ============================================ */
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,7 +20,9 @@ body {
     padding: 0 24px;
 }
 
-/* Navigation */
+/* ============================================
+   Navigation
+   ============================================ */
 .navbar {
     position: fixed;
     top: 0;
@@ -75,7 +79,9 @@ body {
     background: #0d4f7c;
 }
 
-/* Hero */
+/* ============================================
+   Hero
+   ============================================ */
 .hero {
     background-size: cover;
     background-position: center;
@@ -106,6 +112,9 @@ body {
     flex-wrap: wrap;
 }
 
+/* ============================================
+   Buttons (General)
+   ============================================ */
 .btn {
     display: inline-block;
     padding: 14px 32px;
@@ -137,7 +146,9 @@ body {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Sections */
+/* ============================================
+   Sections
+   ============================================ */
 .section {
     padding: 96px 0;
 }
@@ -155,7 +166,21 @@ body {
     letter-spacing: -0.5px;
 }
 
-/* About */
+/* Product Detail Page Subtitle */
+.page-subtitle {
+    text-align: center;
+    margin-bottom: 48px;
+    color: #64748b;
+    font-size: 1.05rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+/* ============================================
+   About
+   ============================================ */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -175,7 +200,9 @@ body {
     box-shadow: 0 12px 32px rgba(10, 61, 98, 0.1);
 }
 
-/* Products */
+/* ============================================
+   Product Grid & Cards
+   ============================================ */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -188,6 +215,10 @@ body {
     border-radius: 12px;
     border: 1px solid #e2e8f0;
     transition: all 0.3s;
+    /* 关键：首页产品卡片是 <a> 标签，去掉下划线、继承颜色 */
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .product-card:hover {
@@ -202,6 +233,7 @@ body {
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 20px;
+    background: #f8fafc;
 }
 
 .product-card h3 {
@@ -216,7 +248,61 @@ body {
     line-height: 1.6;
 }
 
-/* Features */
+/* ============================================
+   Product Highlights (Detail Page)
+   ============================================ */
+.product-highlights {
+    list-style: none;
+    padding-left: 0;
+    margin: 16px 0;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 16px;
+}
+
+.product-highlights li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+.product-highlights li::before {
+    content: "•";
+    color: #f5b041;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* ============================================
+   Download Button (PDF)
+   ============================================ */
+.btn-download {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 16px;
+    background: #f8fafc;
+    color: #0a3d62;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.btn-download:hover {
+    background: #0a3d62;
+    color: #fff;
+    border-color: #0a3d62;
+}
+
+/* ============================================
+   Features
+   ============================================ */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -252,7 +338,9 @@ body {
     font-size: 0.95rem;
 }
 
-/* Certificates */
+/* ============================================
+   Certificates
+   ============================================ */
 .cert-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -278,7 +366,9 @@ body {
     margin-top: 24px;
 }
 
-/* Footer */
+/* ============================================
+   Footer
+   ============================================ */
 .footer {
     background: #0a3d62;
     color: #fff;
@@ -321,7 +411,9 @@ body {
     opacity: 0.6;
 }
 
-/* Responsive */
+/* ============================================
+   Responsive
+   ============================================ */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
@@ -352,5 +444,15 @@ body {
 
     .section-title {
         font-size: 1.7rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .page-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 32px;
     }
 }
